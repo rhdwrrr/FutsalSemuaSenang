@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <div class="logo me-auto">
+                <div style="height: 50px;"></div>
+                <h1><a href="index.html">FUTSAL SEMUA SENANG</a></h1>
+                <br>
+
+                <!-- Autoplay Audio -->
+                <audio controls autoplay="autoplay" loop style="width: 140px;height: 20px;">
+                    <source src="~/assets/audio/pildun.mp3" type="audio/mpeg">
+                </audio>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="~/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Halaman Utama</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="#menu">Harga Booking</a></li>
+                    <li><a class="nav-link scrollto" href="#gallery">Photo</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+            <a asp-controller="Home" asp-action="Daftar" class="book-a-table-btn scrollto">Masuk / Daftar</a>
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" style="background: url(assets/img/slide/main1.jpg);">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown"><span>Futsal</span> Semua Senang</h2>
+                                <p class="animate__animated animate__fadeInUp">Menyediakan lapangan futsal terbaik dan terbesar di kota Bandung dengan fasilitas yang lengkap dan tentunya dengan harga yang terjangkau.</p>
+                                <div>
+                                    <a asp-controller="Home" asp-action="Daftar" class="btn-book animate__animated animate__fadeInUp scrollto">Masuk / Daftar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" style="background: url(assets/img/slide/main2.jpg);">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown">Fasilitas Lengkap</h2>
+                                <p class="animate__animated animate__fadeInUp">Lapangan futsal semua senang menyediakan berbagai fasilitas bagi anda yang tentunya dapat memanjakan waktu berolahraga anda. Ayo tunggu apa lagi, segera booking sekarang.</p>
+                                <div>
+                                    <a asp-controller="Home" asp-action="Daftar" class="btn-book animate__animated animate__fadeInUp scrollto">Masuk / Daftar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item" style="background: url(assets/img/slide/main3.jpg);">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown">Harga Terjangkau</h2>
+                                <p class="animate__animated animate__fadeInUp">Meskipun dilengkapi fasilitas yang sangat lengkap, kami tetap memberikan harga terbaik bagi anda yang tentunya dengan harga termurah di kota Bandung.</p>
+                                <div>
+                                    <a asp-controller="Home" asp-action="Daftar" class="btn-book animate__animated animate__fadeInUp scrollto">Masuk / Daftar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/about.jpg");'>
+                        <a href="https://youtu.be/wEG9pjHKkOQ" target="blank" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                    </div>
+
+                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+                        <div class="content">
+                            <h3>E-Booking lapangan futsal <strong>Semua Senang</strong></h3>
+                            <p>
+                                Adalah sebuah perusahaan yang menyediakan fasilitas olahraga dengan peralatan yang terbaik dan bermutu guna untuk memaksimalkan hasil dari olahraga yang telah dilakukan pengunjung. Mendapat predikat sebagai tempat olahraga terbaik di kota Bandung.
+                            </p>
+                            <p class="fst-italic">
+                                Berikut fasilitas yang disediakan diantaranya :
+                            </p>
+                            <ul>
+                                <li><i class="bx bx-check-double"></i> 3 Lapangan Futsal Standart Dunia.</li>
+                                <li><i class="bx bx-check-double"></i> Taman olahraga untuk bersantai.</li>
+                                <li><i class="bx bx-check-double"></i> Caffee dan shop store untuk keperluan olahraga.</li>
+                                <li><i class="bx bx-check-double"></i> Mushola untuk beribadah.</li>
+                                <li><i class="bx bx-check-double"></i> Ruang ganti dan WC pria/wanita.</li>
+                            </ul>
+                            <p>
+                                Kami akan tetap untuk terus berusaha memberikan yang terbaik untuk anda, jangan sungkan untuk memberikan kritik dan saran agar kami dapat menjadi lebih baik lagi untuk kedepannya.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+        <!-- ======= Whu Us Section ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Kenapa memilih lapangan futsal<span>Semua Senang</span></h2>
+                    <p>Berikut adalah beberapa alasan kenapa harus menggunakan lapangan futsal semua senang.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="box">
+                            <span>01</span>
+                            <h4>Standart Internasional</h4>
+                            <p>Ukuran lapangan dan fasilitas olahraga sudah sesuai dengan standart lapangan yang diatur oleh internasional</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                            <span>02</span>
+                            <h4>Termurah</h4>
+                            <p>Untuk saat ini kami masih menduduki lapangan dengan harga yang sangat murah untuk fasilitas yang di berikan</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                            <span>03</span>
+                            <h4>Ternyaman</h4>
+                            <p>Dengan banyak fasilitas yang disediakan oleh kami tentunya dapat membuat anda menjadi betah dan ingin berlama - lama untuk bersantai.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Whu Us Section -->
+        <!-- ======= Menu Section ======= -->
+        <section id="menu" class="menu">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Cek harga sewa <span>lapangan futsal</span></h2>
+                </div>
+
+                <div class="" align="center">
+                    <div class="col-lg-6 menu-item filter-starters">
+                        <div class="menu-content">
+                            <a href="#">Booking Lapangan 1</a><span>Rp. 100K</span>
+                        </div>
+                        <div class="menu-ingredients">
+                            Lapangan 1 jam, Bola, Minum gratis.
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 menu-item filter-starters">
+                        <div class="menu-content">
+                            <a href="#">Booking Lapangan 2</a><span>Rp. 100K</span>
+                        </div>
+                        <div class="menu-ingredients">
+                            Lapangan 1 jam, Bola, Minum gratis.
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 menu-item filter-starters">
+                        <div class="menu-content">
+                            <a href="#">Booking Lapangan 3</a><span>Rp. 100K</span>
+                        </div>
+                        <div class="menu-ingredients">
+                            Lapangan 1 jam, Bola, Minum gratis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Menu Section -->
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery" align="center">
+            <div class="container-fluid">
+
+                <div class="section-title">
+                    <h2>Kumpulan foto <span>Futsal Semua Senang</span></h2>
+                    <p>Berikut adalah beberapa foto dokumentasi dari lapangan semua senang.</p>
+                </div>
+
+                <div class="row no-gutters">
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-1.jpg" style="height: 250px;width:400px; margin-bottom: 25px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-2.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-3.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-4.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-5.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-6.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-7.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="gallery-item">
+                            <a href="~/assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
+                                <img src="~/assets/img/gallery/gallery-8.jpg" style="height: 250px;width:400px;" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Gallery Section -->
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2><span>Hubungi</span> Kami</h2>
+                    <p>Silahkan datang ke lokasi atau anda juga dapat menghubungi kami melalui kontak yang tertera dibawah ini.</p>
+                </div>
+            </div>
+
+            <style>
+                .full {
+                    width: 100%;
+                }
+            </style>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.0614263909406!2d107.57268950057285!3d-6.89405411410365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e5ebd97d2b3f%3A0x897b4aaa652028b6!2sUniversitas%20Nasional%20PASIM%20Bandung!5e0!3m2!1sid!2sid!4v1630304866765!5m2!1sid!2sid"
+                        class="full" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="container mt-5">
+
+                <div class="info-wrap">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 info">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Lokasi:</h4>
+                            <p>Dakota 8A<br>Cicendo, Bandung</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                            <i class="bi bi-clock"></i>
+                            <h4>Jam buka:</h4>
+                            <p>Senin-Minggu:<br>13:00 - 15.00 WIB</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>futsalsemuasenang@gmail.com</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                            <i class="bi bi-phone"></i>
+                            <h4>Telepon:</h4>
+                            <p>+62 851 5606 1121
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+</body>
+</html>

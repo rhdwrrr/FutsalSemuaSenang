@@ -1,0 +1,63 @@
+﻿<style>
+    .form{
+        margin:0px 500px 10px 500px; 
+        color:white;
+    }
+
+    h2{
+        margin:16px 0 31px 0;
+    }
+
+    .utama{
+        background-color:gray;     
+        padding:1px 0 1px 0;        
+    }
+
+    .header {
+        background-color: gray;
+        height: 36px;
+        width:100%;        
+    }
+
+    .home {
+        padding: 20px 0 0 30px;
+    }
+
+</style>
+
+<div class="header">
+</div>
+
+<div class="utama">
+    <div class="form">
+        <h2 align="center">Silahkan Daftar</h2>
+        <form class="row g-3">
+            <div class="col-md-12">
+                <label for="validationDefault01" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="validationDefault01" placeholder="RANDI FIRMANSYAH" required>
+            </div>
+            <div class="col-md-12">
+                <label for="validationDefault02" class="form-label">Password</label>
+                <input type="password" class="form-control" id="validationDefault02" placeholder="3fejFoieew" required>
+            </div>
+            <div class="col-md-10">
+                <label for="validationDefault02" class="form-label">Email</label>
+                <input type="text" class="form-control" id="validationDefault03" placeholder="contoh@mail.com" required>
+            </div>
+            <div class="col-2" style="margin:36px 0 0 0">
+                <button class="btn btn-dark">Kirim OTP</button>
+            </div>
+            <div class="col-md-12">
+                <label for="validationDefault01" class="form-label">Konfirmasi OTP</label>
+                <input type="text" class="form-control" id="validationDefault01" placeholder="" required>
+            </div>
+            <div class="col-12" align="center">
+                <button class="btn btn-success btn-lg" type="submit">Daftar</button>
+            </div>
+        </form>
+        <div align="center" style="margin:20px 0 20px 0;">
+            Sudah memiliki akun ?                
+            <a asp-controller="Home" asp-action="Masuk">Masuk</a>            
+        </div>
+    </div>
+</div>

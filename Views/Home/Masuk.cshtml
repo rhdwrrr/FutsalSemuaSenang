@@ -1,0 +1,48 @@
+﻿<style>
+    .form{
+        margin:20px 500px 20px 500px; 
+        color:white;
+    }
+
+    h2{
+        margin:51px 0 52px 0;
+    }
+
+    .utama{
+        background-color:gray;     
+        padding:1px 0 1px 0;        
+    }
+
+    .header {
+        background-color: gray;
+        height: 50px;
+        width:100%;
+    }
+
+</style>
+
+<div class="header">
+</div>
+
+<div class="utama">
+    <div class="form">
+        <h2 align="center">Silahkan Masuk</h2>
+        <form class="row g-3">
+            <div class="col-md-12">
+                <label for="validationDefault02" class="form-label">Email</label>
+                <input type="text" class="form-control" id="validationDefault03" placeholder="contoh@mail.com" required>
+            </div>
+            <div class="col-md-12">
+                <label for="validationDefault02" class="form-label">Password</label>
+                <input type="password" class="form-control" id="validationDefault02" placeholder="3fejFoieew" required>
+            </div>
+            <div class="col-12" align="center" style="margin:36px 0 36px 0;">
+                <button class="btn btn-success btn-lg" type="submit">Masuk</button>
+            </div>
+        </form>
+        <div align="center" style="margin:20px 0 20px 0;">
+            Belum memiliki akun ?
+            <a asp-controller="Home" asp-action="Daftar">Daftar</a>
+        </div>
+    </div>
+</div>
