@@ -2,64 +2,92 @@
 
 @{ Layout = "_AdminLayout"; }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                ID User
-            </th>
-            <th>
-                Nama Lapangan
-            </th>
-            <th>
-                Tanggal Booking
-            </th>
-            <th>
-                Jam Mulai
-            </th>
-            <th>
-                Jam Selesai
-            </th>
-            <th>
-                Harga
-            </th>
-            <th>
-                Status
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<br />
+<h3 align="center" style="font-family:'Comic Sans MS'">Semua Order Booking</h3>
+<br />
+
+<div class="card">
+    <table class="table">
+        <thead>
             <tr>
-                <td>
+                <td align="center" width="5%">
+                    <strong style="font-size:15px">Nomor</strong>
+                </td>
+                <td align="center" width="5%">
+                    <strong style="font-size:15px">Id User</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Nama Lapangan</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Tanggal Booking</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Jam Mulai</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Jam Selesai</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Harga</strong>
+                </td>
+                <td align="center" width="10%"><strong style="font-size:15px">Status Konfirmasi</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            @{ 
+                var nomor = 1;
+            }
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td align="center">
+                    @nomor
+                    @{
+                        nomor += 1;
+                    }
+                </td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.IdUser)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.NamaLapangan)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.Tanggal)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.JamMulai)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.JamSelesai)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.Harga)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                @{ if (item.Status == true)
+                    {
+                        <td align="center">
+                            <a href="@Url.Action("BatalkanKonfirmasi", "Home", new { id = item.Id })"
+                               class="fas fa-download fa-2x" title="Batalkan Konfirmasi" style="color:red"
+                               onclick="if (! confirm('Yakin untuk Membatalkan Order Booking ini ?')) { return false; }">
+                            </a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td align="center">
+                            <a href="@Url.Action("Konfirmasi", "Home", new { id = item.Id })"
+                               class="fas fa-upload fa-2x" title="Konfirmasi" style="color:green"
+                               onclick="if (! confirm('Yakin untuk Mengkonfirmasi Booking ini ?')) { return false; }">
+                            </a>
+                        </td>
+                    }
+                }
             </tr>
-        }
-    </tbody>
-</table>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />

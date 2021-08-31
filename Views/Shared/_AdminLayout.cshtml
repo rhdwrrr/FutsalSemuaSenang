@@ -117,7 +117,8 @@
                       <a href="#booking" class="nav-link">
                           <i class="nav-icon fas fa-history"></i>
                           <p>
-                              Booking                              
+                              Booking
+                              <i class="fas fa-angle-down" style="margin-left:130px;"></i>
                           </p>
                       </a>
                       <ul class="nav nav-treeview">
@@ -128,13 +129,13 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="@Url.Action("Published", "Home")" class="nav-link">
+                              <a href="@Url.Action("Terkonfirmasi", "Home")" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Terkonfirmasi</p>
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="@Url.Action("Draft", "Home")" class="nav-link">
+                              <a href="@Url.Action("BelumTerkonfirmasi", "Home")" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Belum Terkonfimasi</p>
                               </a>
@@ -149,23 +150,24 @@
                           <i class="nav-icon fas fa-user"></i>
                           <p>
                               Users
+                              <i class="fas fa-angle-down" style="margin-left:144px;"></i>
                           </p>
                       </a>
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
-                              <a href="@Url.Action("Index", "Home")" class="nav-link">
+                              <a href="@Url.Action("AllUser", "Home")" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Semua</p>
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="@Url.Action("Published", "Home")" class="nav-link">
+                              <a href="@Url.Action("Aktif", "Home")" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Aktif</p>
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="@Url.Action("Draft", "Home")" class="nav-link">
+                              <a href="@Url.Action("NonAktif", "Home")" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Non-Aktif</p>
                               </a>

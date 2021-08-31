@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FutsalSemuaSenang.Models.User>
+
+@{ Layout = "_AdminLayout"; }
+
+<br />
+<h3 align="center" style="font-family:'Comic Sans MS'">Semua User NonAktif</h3>
+<br />
+
+<div class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <td align="center" width="5%">
+                    <strong style="font-size:15px">Nomor</strong>
+                </td>
+                <td align="center" width="5%">
+                    <strong style="font-size:15px">Id</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Nama</strong>
+                </td>
+                <td align="center" width="10%">
+                    <strong style="font-size:15px">Email</strong>
+                </td>
+                <td align="center" width="10%"><strong style="font-size:15px">Aktifkan</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var nomor = 1;
+            }
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td align="center">
+                    @nomor
+                    @{
+                        nomor += 1;
+                    }
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td align="center">
+                    <a href="@Url.Action("Aktifkan", "Home", new { id = item.Id })"
+                        class="fas fa-upload fa-2x" title="Aktifkan" style="color:green"
+                        onclick="if (! confirm('Yakin untuk mengaktifkan User ini ?')) { return false; }">
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
