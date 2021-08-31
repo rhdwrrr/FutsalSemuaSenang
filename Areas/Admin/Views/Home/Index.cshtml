@@ -1,71 +1,65 @@
 ﻿@model IEnumerable<FutsalSemuaSenang.Models.Booking>
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ Layout = "_AdminLayout"; }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdUser)
+                ID User
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NamaLapangan)
+                Nama Lapangan
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tanggal)
+                Tanggal Booking
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JamMulai)
+                Jam Mulai
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JamSelesai)
+                Jam Selesai
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Harga)
+                Harga
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                Status
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NamaLapangan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tanggal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JamMulai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JamSelesai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Harga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamaLapangan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tanggal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JamMulai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JamSelesai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Harga)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

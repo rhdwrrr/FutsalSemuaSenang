@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FutsalSemuaSenang.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,13 +8,21 @@ using System.Threading.Tasks;
 
 namespace FutsalSemuaSenang.Areas.Admin.Controllers
 {
+    [Authorize]
+    [Area("Admin")]
     public class HomeController : Controller
     {
-        [Authorize]
-        [Area("Admin")]
+        private readonly AppDbContext _context;
+
+        public HomeController(AppDbContext c)
+        {
+            _context = c;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var data = _context.Booking.ToList();
+            return View(data);
         }
     }
 }
