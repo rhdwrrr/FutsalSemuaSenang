@@ -75,12 +75,6 @@ namespace FutsalSemuaSenang.Controllers
 
         private int UserOtp;
 
-        private string Name;
-        
-        private string Password;
-        
-        private string Email;
-
         [HttpPost]
         public IActionResult KonfirmasiEmail([Bind("Name,Password,Email,Role")] UserForm data)
         {
