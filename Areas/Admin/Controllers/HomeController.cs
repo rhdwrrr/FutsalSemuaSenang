@@ -17,6 +17,7 @@ namespace FutsalSemuaSenang.Areas.Admin.Controllers
         public HomeController(AppDbContext c)
         {
             _context = c;
+            var role = _context.Roles.FirstOrDefault(x => x.Id == 1);
         }
 
         public IActionResult Index()
@@ -83,21 +84,29 @@ namespace FutsalSemuaSenang.Areas.Admin.Controllers
             return View();
         }
 
+        //select Roles supaya hanya user yang tampil
+        private Roles IdAdmin()
+        {
+            var role = _context.Roles.FirstOrDefault(x => x.Id == 1);
+            return role;
+        }
+
         public IActionResult AllUser()
         {
-            var data = _context.User.ToList().Where(x => x.Role != _context.Roles.Where(x=>x.Name=="Admin") && x.Id!=1);
+            var data = _context.User.ToList().Where(x => x.Role != IdAdmin());
             return View(data);
         }
 
         public IActionResult Aktif()
         {
-            var data = _context.User.ToList().Where(x => x.Status == true && x.Id != 1);
+            var data = _context.User.ToList().Where(x => x.Status == true && x.Role != IdAdmin());
             return View(data);
         }
 
         public IActionResult NonAktif()
         {
-            var data = _context.User.ToList().Where(x => x.Status == false && x.Id != 1);
+            var role = _context.Roles.FirstOrDefault(x => x.Id == 1);
+            var data = _context.User.ToList().Where(x => x.Status == false && x.Role != IdAdmin());
             return View(data);
         }
 
