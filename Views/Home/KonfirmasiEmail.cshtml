@@ -1,0 +1,51 @@
+﻿<style>
+    .form {
+        margin: 20px 500px 20px 500px;
+        color: white;
+    }
+
+    h2 {
+        margin: 51px 0 52px 0;
+    }
+
+    .utama {
+        background-color: gray;
+        padding: 1px 0 1px 0;
+    }
+
+    .header {
+        background-color: gray;
+        height: 50px;
+        width: 100%;
+    }
+</style>
+
+<div class="header">
+</div>
+
+<div class="utama">
+    <div class="form">
+        <h2 align="center">Silahkan Masuk</h2>
+        <form class="row g-3" asp-action="Cek" method="POST">
+            <div class="col-md-12">
+                <label for="validationDefault01" class="form-label">Konfirmasi OTP</label>
+                <input name="otp" type="text" class="form-control" id="otp" required>
+            </div>
+            <div class="col-12" align="center">
+                <button class="btn btn-success btn-lg" type="submit">Konfirmasi</button>
+            </div>
+        </form>
+        <div align="center" style="margin:20px 0 20px 0;">
+            Belum menerima Email ?
+            <a asp-controller="Home" asp-action="KirimLagi">Kirim</a>
+        </div>
+    </div>
+</div>
+
+@section Script{
+    <script>
+        if ('@TempData["AlertMessage"]' !== "") {
+            alert('@TempData["AlertMessage"]');
+        }
+    </script>
+}

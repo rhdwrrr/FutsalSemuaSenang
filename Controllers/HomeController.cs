@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -59,6 +60,94 @@ namespace FutsalSemuaSenang.Controllers
                 return Redirect("/Home");
             }
             return View();
+        }
+
+        private void Alert(string kalimat)
+        {
+            if (string.IsNullOrEmpty(kalimat))
+            {
+                TempData["AlertMessage"] = kalimat;
+            }
+        }
+
+        private int UserOtp;
+
+        private string Name;
+        
+        private string Password;
+        
+        private string Email;
+
+        [HttpPost]
+        public IActionResult KonfirmasiEmail([Bind("Name,Password,Email,Role")] UserForm data)
+        {
+            try
+            {
+                this.Name = data.Name;
+                this.Password = data.Password;
+                this.Email = data.Email;
+
+                Random nilai = new Random();
+                int otp = nilai.Next(1000,9999);
+                this.UserOtp = otp;
+
+                MailMessage email = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                email.From = new MailAddress("futsalsemuasenang@gmail.com");
+                email.To.Add(data.Email);
+                email.Subject = "Konfirmasi Akun";
+                email.Body = "Masukan kode "+otp+ " untuk mengkonfirmasi akun pendaftaran anda di Website Futsal Semua Senang!";
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("futsalsemuasenang@gmail.com", "FutsalSemuaSenang!");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(email);
+                Alert("Kode OTP telah dikirimkan ke email " + data.Email);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return View("Daftar");
+            }
+            return View();
+        }
+
+        private void TambahUser()
+        {
+            var user = new User()
+            {
+                Name = this.Name,
+                Password = this.Password,
+                Email = this.Email,
+            };
+
+            var role = _context.Roles
+                    .FirstOrDefault(x => x.Id == 2);
+
+            if (role != null)
+            {
+                user.Role = role;
+            }
+
+            _context.Add(user);
+
+            _context.SaveChanges();
+        }
+
+        [HttpPost]
+        public IActionResult Cek([Bind("otp")] Otp data)
+        {
+            if (data.KodeOtp == this.UserOtp)
+            {
+                TambahUser();
+                return View("Login");
+            }
+            else
+            {
+                return View("KonfirmasiEmail");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

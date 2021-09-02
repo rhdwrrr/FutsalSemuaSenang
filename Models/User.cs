@@ -16,6 +16,11 @@ namespace FutsalSemuaSenang.Models
         public Roles Role { get; set; }
     }
 
+    public class Otp
+    {
+        public int KodeOtp { get; set; }
+    }
+
     public class UserId
     {
         public int Id { get; set; }
