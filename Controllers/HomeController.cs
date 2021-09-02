@@ -1,4 +1,5 @@
 ﻿using FutsalSemuaSenang.Models;
+using FutsalSemuaSenang.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,10 +23,12 @@ namespace FutsalSemuaSenang.Controllers
         public IActionResult Daftar() => View();
 
         private readonly AppDbContext _context;
+        private readonly OTPService otpSvc;
 
-        public HomeController(AppDbContext c)
+        public HomeController(AppDbContext c, OTPService otpSvc)
         {
             _context = c;
+            this.otpSvc = otpSvc;
         }
 
         [HttpPost]
@@ -83,9 +86,7 @@ namespace FutsalSemuaSenang.Controllers
         {
             try
             {
-                this.Name = data.Name;
-                this.Password = data.Password;
-                this.Email = data.Email;
+                otpSvc.SetUser(data.Name, data.Email, data.Password);
 
                 Random nilai = new Random();
                 int otp = nilai.Next(1000,9999);
@@ -116,11 +117,13 @@ namespace FutsalSemuaSenang.Controllers
 
         private void TambahUser()
         {
+            string nama = "", email = "", password = "";
+            otpSvc.GetUser(ref nama, ref email, ref password);
             var user = new User()
             {
-                Name = this.Name,
-                Password = this.Password,
-                Email = this.Email,
+                Name = nama,
+                Password = password,
+                Email = email,
             };
 
             var role = _context.Roles
